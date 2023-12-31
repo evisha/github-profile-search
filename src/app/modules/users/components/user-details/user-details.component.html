@@ -9,15 +9,10 @@
       {{ user.login }}
     </p>
     <p> Popular repositories </p>
-    <div class="grid-container">
-      <div class="grid-card">
-        <h2 class="card-title">Card Title 1</h2>
-        <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-
-      <div class="grid-card">
-        <h2 class="card-title">Card Title 2</h2>
-        <p class="card-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="grid-container" *ngIf="userRepos">
+      <div class="grid-card" *ngFor="let userRepo of userRepos ">
+        <h2 class="card-title">{{ userRepo.name}}</h2>
+        <p class="card-description">{{ userRepo.language}}</p>
       </div>
     </div>
   </div>

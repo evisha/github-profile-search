@@ -28,8 +28,16 @@ export class UserService {
       {...this.httpOptions, params: qParam});
   }
 
-  getSingleUser(username?: string): Observable<any> {
+  getSingleUser(username: string): Observable<any> {
     return this.http.get(`${this.baseUrl}users/${username}`);
+  }
+
+  getUserRepos(username: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}users/${username}/repos`);
+  }
+
+  getUserFollowers(username: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}users/${username}/followers`);
   }
 
 }

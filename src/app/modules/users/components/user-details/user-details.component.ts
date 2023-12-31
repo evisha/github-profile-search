@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../../core/services/user.service";
+import {combineLatest} from "rxjs";
 
 @Component({
   selector: 'app-user-details',
@@ -9,6 +10,8 @@ import {UserService} from "../../../../core/services/user.service";
 })
 export class UserDetailsComponent {
   public user: any;
+  public userRepos: any;
+  public userFollowers: any;
   public loading = true; // Add a loading indicator
   constructor(private route: ActivatedRoute, private US: UserService) {
   }
@@ -17,13 +20,29 @@ export class UserDetailsComponent {
     this.route.params.subscribe(params => {
       const username = params['username'];
       console.log(params);
-      this.US.getSingleUser(username).subscribe(doc => {
-        this.user = doc;
+      this.getUserData(username);
+    });
+  }
+
+  getUserData(username: string) {
+    combineLatest([this.US.getSingleUser(username), this.US.getUserRepos(username), this.US.getUserFollowers(username)]).subscribe(
+      ([userInfo, userRepos, userFollowers]: any) => {
+        if (userInfo) {
+          this.user = userInfo;
+        }
+        if (userRepos) {
+          this.userRepos = userRepos;
+        }
+        if (userFollowers){
+          this.userFollowers = userFollowers;
+        }
+
         this.loading = false; // Turn off the loading indicator when data is received
-      }, (error) => {
+      },
+      error => {
         console.error('Error fetching data:', error);
         this.loading = false; // Turn off the loading indicator in case of an error
-      })
-    });
+      }
+    );
   }
 }

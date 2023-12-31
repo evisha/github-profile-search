@@ -19,18 +19,18 @@ export class UserService {
     this.baseUrl = 'https://api.github.com/'
   }
 
-  getAllUsers(query: any): Observable<any> {
+  getAllUsers(query: any = ''): Observable<any> {
     // "user_search_url": "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
-    let qParam: HttpParams;
+    let qParam!: HttpParams;
     if (query) {
       qParam = new HttpParams().set('q', query);
     }
     return this.http.get<any>(`${this.baseUrl}search/users?q=e`,
-      {...this.httpOptions, params: qParam! && qParam});
+      {...this.httpOptions, params: qParam});
   }
 
-  getSingleUser(idUser?: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}user/${idUser}`);
+  getSingleUser(username?: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}users/${username}`);
   }
 
 }

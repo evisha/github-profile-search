@@ -18,7 +18,7 @@ export class SearchBarComponent {
   searchTerm = new FormControl();
   @Output() search = this.searchTerm.valueChanges.pipe(
     debounceTime(500),
-    filter((value) => value === null || value.length > 1 || value === ''),
+    //filter((value) => value === null || value.length > 1 || value === ''),
     distinctUntilChanged(),
     map((value) => {
       if (value === null) {

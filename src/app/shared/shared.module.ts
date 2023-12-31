@@ -11,9 +11,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     SearchBarComponent,
     UserCardComponent
   ],
-  exports: [
-    SearchBarComponent
-  ],
+    exports: [
+        SearchBarComponent,
+        UserCardComponent
+    ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

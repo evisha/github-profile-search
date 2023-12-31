@@ -1,1 +1,4 @@
-<p>user-card works!</p>
+<div class="user-item" (click)="navigateToUser.emit(user.login)">
+  <img src="{{ user.avatar_url }}" alt="Avatar" class="avatar">
+  <p class="username"> {{ user.login }}</p>
+</div>

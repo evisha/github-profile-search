@@ -31,7 +31,7 @@ export class UserDetailsComponent {
           this.user = userInfo;
         }
         if (userRepos) {
-          this.userRepos = userRepos;
+          this.userRepos = userRepos //.filter((el:any) => Boolean(el.fork));
         }
         if (userFollowers){
           this.userFollowers = userFollowers;

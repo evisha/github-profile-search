@@ -81,7 +81,7 @@ body.dark-mod { @include includeDark }
 
   .card {
     width: 100%;
-    max-width: 700px;
+    max-width: 70vw;
     margin: 8px 16px;
     padding: 16px 24px 8px;
     background-color: var(--background-card-color);

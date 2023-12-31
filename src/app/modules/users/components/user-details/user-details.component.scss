@@ -37,11 +37,25 @@
     }
 
     .grid-card {
+      padding: 5px 15px;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
       overflow: hidden;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: #3178c6;
+      .card-language {
+        display: flex;
+        align-items: center;
+        .circle {
+          display: inline-block;
+          height: 15px;
+          width: 15px;
+          background: #3178c6;
+          border-radius: 50%;
+          margin: 0 5px;
+        }
+      }
     }
 
   }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {ThemeService} from "./core/services/theme.service";
-import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,5 @@
 import {Component, Output} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormControl} from "@angular/forms";
 import {debounceTime, distinctUntilChanged, filter, map} from "rxjs";
 
 @Component({
@@ -8,7 +8,7 @@ import {debounceTime, distinctUntilChanged, filter, map} from "rxjs";
     <div class="search-box">
       <input autocomplete="off" type="text"
              class="search-txt"
-             placeholder="Enter github username"
+             placeholder="Type to search GitHub users"
              [formControl]="searchTerm"/>
     </div>
   `,

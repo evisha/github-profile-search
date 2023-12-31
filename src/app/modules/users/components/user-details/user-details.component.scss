@@ -1,0 +1,49 @@
+.user-item {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .left-side {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }
+
+  .right-side {
+    flex: 4;
+    padding: 20px;
+
+    .username {
+      display: flex;
+      align-items: center;
+      color: #333;
+      svg {
+        margin-right: 10px;
+      }
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+      gap: 20px; /* Gap between cards */
+    }
+
+    .grid-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+  }
+}
+

@@ -8,7 +8,6 @@ export class UserService {
   private baseUrl: string;
   private httpOptions = {
     headers: new HttpHeaders({
-      Authorization: `Bearer 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`,
       'Content-Type': 'application/json',
     }),
   };

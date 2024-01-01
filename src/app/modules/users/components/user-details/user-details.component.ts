@@ -19,7 +19,6 @@ export class UserDetailsComponent {
   ngOnInit() {
     this.route.params.subscribe(params => {
       const username = params['username'];
-      console.log(params);
       this.getUserData(username);
     });
   }

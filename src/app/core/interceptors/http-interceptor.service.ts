@@ -13,7 +13,6 @@ export class HttpInterceptorService {
     // You can modify the request before it is sent
     const modifiedRequest = request.clone({
       setHeaders: {
-         Authorization: `Bearer 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`,
         'Content-Type': 'application/json',
       },
     });

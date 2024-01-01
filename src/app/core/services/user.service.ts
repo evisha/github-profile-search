@@ -1,4 +1,4 @@
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -6,11 +6,6 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private baseUrl: string;
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    }),
-  };
 
   constructor(
     private http: HttpClient
@@ -25,7 +20,7 @@ export class UserService {
       qParam = new HttpParams().set('q', query);
     }
     return this.http.get<any>(`${this.baseUrl}search/users?q=e`,
-      {...this.httpOptions, params: qParam});
+      { params: qParam});
   }
 
   getSingleUser(username: string): Observable<any> {

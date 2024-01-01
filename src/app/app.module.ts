@@ -6,6 +6,7 @@ import {UsersModule} from "./modules/users/users.module";
 import {UsersRoutingModule} from "./modules/users/users-routing.module";
 import {HTTP_INTERCEPTORS, provideHttpClient, withFetch} from "@angular/common/http";
 import {HttpInterceptorService} from "./core/interceptors/http-interceptor.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import {HttpInterceptorService} from "./core/interceptors/http-interceptor.servi
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     UsersModule,
     UsersRoutingModule

@@ -9,15 +9,16 @@
 
 
   <main class="card" [class.dark]="isDarkMode()">
-    <section class="card_body body">
-      <div class="night-mode-container">
-        <input type="checkbox" id="nightModeToggle" (click)="toggleDarkMode()" />
-        <label for="nightModeToggle" class="night-mode-label">
-          {{ isDarkMode() ? 'Night Mode On' : 'Night Mode Off' }}
-        </label>
-      </div>
-      <router-outlet></router-outlet>
+    <div class="night-mode-container">
+      <input type="checkbox" id="nightModeToggle" (click)="toggleDarkMode()" />
+      <label for="nightModeToggle" class="night-mode-label">
+        {{ isDarkMode() ? 'Night Mode On' : 'Night Mode Off' }}
+      </label>
+    </div>
+    <section class="card_body body" [@routerTransition]="getRouterOutletState(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
     </section>
+
   </main>
 
 

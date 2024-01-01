@@ -40,7 +40,7 @@ export class UserDetailsComponent {
         this.loading = false; // Turn off the loading indicator when data is received
       },
       error => {
-        console.error('Error fetching data:', error);
+        //console.error('Error fetching data:', error);
         this.loading = false; // Turn off the loading indicator in case of an error
       }
     );

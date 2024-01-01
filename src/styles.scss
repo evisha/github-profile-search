@@ -87,6 +87,12 @@ body.dark-mod { @include includeDark }
     background-color: var(--background-card-color);
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+    .night-mode-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
     &_header {
       display: flex;
       flex-wrap: wrap;
@@ -96,10 +102,6 @@ body.dark-mod { @include includeDark }
     &_body {
       padding: 16px;
       min-width: 600px;
-      .night-mode-container {
-        display: flex;
-        justify-content: flex-end;
-      }
     }
   }
 

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpRequest} from "@angular/common/http";
 import {catchError, finalize, Observable, throwError} from "rxjs";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpInterceptorService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     // You can modify the request before it is sent
@@ -21,10 +22,12 @@ export class HttpInterceptorService {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 401) {
             // handle Token error
+            this.router.navigate(['access-denied']);
           }
 
           if (err.status === 403) {
             // handle Access Denied error
+            this.router.navigate(['access-denied']);
           }
 
           if (err.status === 500) {

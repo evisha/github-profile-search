@@ -6,6 +6,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {HttpInterceptorService} from "../core/interceptors/http-interceptor.service";
+import {AccessDeniedComponent} from "./components/access-denied/access-denied.component";
 
 
 
@@ -13,12 +14,14 @@ import {HttpInterceptorService} from "../core/interceptors/http-interceptor.serv
   declarations: [
     SearchBarComponent,
     UserCardComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AccessDeniedComponent
   ],
     exports: [
         SearchBarComponent,
         UserCardComponent,
-        SpinnerComponent
+        SpinnerComponent,
+        AccessDeniedComponent
     ],
   imports: [
     CommonModule,

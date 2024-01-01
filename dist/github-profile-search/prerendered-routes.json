@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/",
+    "/access-denied",
+    "/auth",
+    "/users"
+  ]
+}

@@ -3,7 +3,7 @@
 GithubProfileSearch is a web application built with Angular that allows users to search for GitHub users and view their profile information and top repositories. The application fetches data from the GitHub API and provides a user-friendly interface to explore GitHub profiles.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
-🌐 Live Demo: [GitHubProfileSearch](https://deploy-preview-3--musical-dieffenbachia-0b6f0d.netlify.app/users)
+🌐 Live Demo: [GitHubProfileSearch](https://65940024e567f90008e46bcf--musical-dieffenbachia-0b6f0d.netlify.app/users)
 
 ## Functionality overview 🚀
 General functionality:
@@ -47,6 +47,9 @@ Folder structure is as below:
 ~~~
 
 The application uses lazy-loading to load modules dynamically.
+
+## State management
+Use of Akita as State-management library - TBD
 
 ## Running unit tests
 

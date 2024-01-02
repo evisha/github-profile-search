@@ -12,21 +12,21 @@ import {Router} from "@angular/router";
 export class UserListComponent {
   searchQuery$ = new BehaviorSubject<string>('');
   userList = [];
+  isSearching = false;
   private readonly router = inject(Router);
   constructor(public US: UserService, private chRef: ChangeDetectorRef) {
   }
 
   ngOnInit() {
     this.searchQuery$.pipe(switchMap(x => {
+      this.isSearching = true;
           if (x === null || x === '') {
+            this.isSearching = false;
             return [];
           }
         return this.US.getAllUsers(x);
       })).subscribe((x) => {
-        console.log(x)
         this.userList = x.items;
-        // for edge cases when it doesn't trigger cd
-       // setTimeout(() => this.chRef.detectChanges(), 2000);
       })
     }
 

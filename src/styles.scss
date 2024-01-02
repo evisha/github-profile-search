@@ -74,6 +74,11 @@ body.dark-mod { @include includeDark }
     margin-bottom: 16px;
   }
 
+  span  {
+    font-size: 16px;
+    color: var(--foreground-secondary-color);
+  }
+
   a {
     color: var(--foreground-color);
     text-transform: uppercase;
@@ -81,7 +86,8 @@ body.dark-mod { @include includeDark }
 
   .card {
     width: 100%;
-    max-width: 70vw;
+    width: 70vw;
+    min-height: 400px;
     margin: 8px 16px;
     padding: 16px 24px 8px;
     background-color: var(--background-card-color);

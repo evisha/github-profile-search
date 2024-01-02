@@ -2,7 +2,6 @@
 <h1> GitHub User Profile Search </h1>
 <p> Browse users and their profiles via <a href="https://docs.github.com/en/rest?apiVersion=2022-11-28"> GitHub API</a></p>
 <app-search-bar (search)="searchQuery$.next($event)"></app-search-bar>
-<ng-container *ngIf="true; else isLoading">
   <ng-container *ngIf="userList.length > 0; else noUsers">
     <div class="user-list">
       <app-user-card
@@ -15,10 +14,5 @@
   </ng-container>
 
   <ng-template #noUsers>
-    <div>No users are here... yet.</div>
+    <span *ngIf="isSearching">No users are here... yet. </span>
   </ng-template>
-</ng-container>
-
-<ng-template #isLoading>
-  <div>Loading users...</div>
-</ng-template>

@@ -73,13 +73,13 @@ body.dark-mod { @include includeDark }
     color: #222;
     background-color: #fff;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden
   }
 
   body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
   }
 
@@ -191,11 +191,16 @@ body.dark-mod { @include includeDark }
 }
   .card {
     width: 100vw;
-    padding: 5px;
+    height: 100vh;
+    padding: 15px;
     margin: 0;
     &_body {
       padding: 0;
+      min-width: unset;
     }
+  }
+  .night-mode-container {
+    margin-bottom: 15px;
   }
 };
 

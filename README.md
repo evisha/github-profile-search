@@ -17,7 +17,35 @@ General functionality:
  1. Clone the repository: https://github.com/evisha/github-profile-search.git
  2. Open the project directory in your code editor
  3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
- 
+
+## Architecture 📁
+
+For this project I have organized files based on the feature they belong to. Each feature folder contains all the related components and other code files specific to that feature.
+In this case, some of the modules and folders are empty but are used to show an example folder structure.
+Folder structure is as below:
+~~~
+├── app
+│   ├── core
+│   │   ├── guards
+│   │   ├── interceptors
+│   │   ├── models
+│   │   ├── services
+│   ├── modules
+│   │   ├── auth
+│   │   ├── users
+│   │   │   ├── components
+│   │   │   │   ├── user-details
+│   │   │   │   ├── user-list
+│   ├── shared
+│   │   ├── animations
+│   │   ├── components
+│   │   │  ├── access-denied
+│   │   │  ├── search-bar
+│   │   │  ├── spinner
+│   │   │  ├── user-card
+~~~
+
+The application uses lazy-loading to load modules dynamically.
 
 ## Running unit tests
 

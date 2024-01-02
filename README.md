@@ -49,7 +49,10 @@ Folder structure is as below:
 The application uses lazy-loading to load modules dynamically.
 
 ## State management
-Use of Akita as State-management library - TBD
+Use of Akita as State-management library to create an example UserDetailsStore 
+
+### LightHouse
+
 
 ## Running unit tests
 

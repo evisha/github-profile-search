@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {combineLatest} from "rxjs";
-import {UserStoreService} from "../../../../core/state/user/user.service";
 import {UserService} from "../../../../core/services/user.service";
 
 @Component({
@@ -15,7 +14,7 @@ export class UserDetailsComponent {
   public userRepos: any;
   public userFollowers: any;
   public loading = true;
-  constructor(private route: ActivatedRoute, private US: UserService, private USS: UserStoreService) {
+  constructor(private route: ActivatedRoute, private US: UserService) {
   }
 
   ngOnInit() {

@@ -30,6 +30,7 @@ Folder structure is as below:
 │   │   ├── interceptors
 │   │   ├── models
 │   │   ├── services
+│   │   ├── state
 │   ├── modules
 │   │   ├── auth
 │   │   ├── users

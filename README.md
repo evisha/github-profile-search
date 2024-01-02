@@ -48,6 +48,9 @@ Folder structure is as below:
 
 The application uses lazy-loading to load modules dynamically.
 
+## State management
+Use of Akita as State-management library - TBD
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

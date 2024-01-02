@@ -130,6 +130,22 @@ body.dark-mod { @include includeDark }
       padding: 16px;
       min-width: 600px;
     }
+    &_heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        text-decoration: none;
+      }
+      h1 {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        svg {
+          margin-right: 5px;
+        }
+      }
+    }
   }
 
   .header {

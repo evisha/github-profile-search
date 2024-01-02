@@ -14,8 +14,7 @@ export class HttpInterceptorService {
     // You can modify the request before it is sent
     const modifiedRequest = request.clone({
       setHeaders: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Content-Type': 'application/json'
       },
     });
     return next.handle(modifiedRequest).pipe(

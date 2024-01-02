@@ -4,6 +4,7 @@ import {UserService} from "../../../../core/services/user.service";
 import {combineLatest} from "rxjs";
 
 @Component({
+  host: {class: 'user-details'},
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrl: './user-details.component.scss'

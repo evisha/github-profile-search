@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+$media-mobile-max: 599.99px !default;
+$media-mobile-max-landscape: 959.99px;
+$media-tablet-min: 600px !default;
+$media-tablet-min-landscape: 960px;
+$media-tablet-max: 1279.9px !default;
+$media-tablet-max-landscape: 1279.9px;
+$media-desktop-min: 840px !default;
+$media-desktop-min-landscape: 1280px;
+
 @mixin includeLight {
   $base-text-color: 0,0,0;
   --background-color: #eeeeee;
@@ -25,6 +34,19 @@
   --foreground-success-color: #ffffff;
   --foreground-secondary-color: rgba(#{$base-text-color}, 0.56);
   --focus-color: rgba(#{$base-text-color}, 0.5);
+}
+
+@mixin media-mobile {
+  @media screen and (max-width: $media-tablet-max) and (orientation: portrait), (max-width: $media-tablet-max-landscape) and (orientation: landscape) {
+
+    @content
+  }
+}
+
+@mixin media-tablet {
+  @media screen and (min-width: $media-tablet-min) and (max-width: $media-tablet-max) and (orientation: portrait), (min-width: $media-tablet-min-landscape) and (max-width: $media-tablet-max-landscape) and (orientation: landscape) {
+    @content
+  }
 }
 
 body, body.light { @include includeLight }
@@ -74,14 +96,19 @@ body.dark-mod { @include includeDark }
     margin-bottom: 16px;
   }
 
+  span  {
+    font-size: 16px;
+    color: var(--foreground-secondary-color);
+  }
+
   a {
     color: var(--foreground-color);
     text-transform: uppercase;
   }
 
   .card {
-    width: 100%;
-    max-width: 70vw;
+    width: 1000px;
+    min-height: 500px;
     margin: 8px 16px;
     padding: 16px 24px 8px;
     background-color: var(--background-card-color);
@@ -155,3 +182,25 @@ body.dark-mod { @include includeDark }
   }
 
 }
+
+@include media-mobile() {
+ body {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+  .card {
+    width: 100vw;
+    padding: 5px;
+    margin: 0;
+    &_body {
+      padding: 0;
+    }
+  }
+};
+
+@include media-tablet() {
+  .card {
+    width: 90vw;
+  }
+};

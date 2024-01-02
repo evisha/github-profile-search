@@ -4,6 +4,7 @@ import {UserService} from "../../../../core/services/user.service";
 import {combineLatest} from "rxjs";
 
 @Component({
+  host: {class: 'user-details'},
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrl: './user-details.component.scss'
@@ -12,7 +13,7 @@ export class UserDetailsComponent {
   public user: any;
   public userRepos: any;
   public userFollowers: any;
-  public loading = true; // Add a loading indicator
+  public loading = true;
   constructor(private route: ActivatedRoute, private US: UserService) {
   }
 
@@ -35,12 +36,12 @@ export class UserDetailsComponent {
         if (userFollowers){
           this.userFollowers = userFollowers;
         }
-
-        this.loading = false; // Turn off the loading indicator when data is received
+        this.loading = false;
       },
       error => {
-        //console.error('Error fetching data:', error);
-        this.loading = false; // Turn off the loading indicator in case of an error
+        //do something
+        console.error('Error fetching data:', error);
+        this.loading = false;
       }
     );
   }
